@@ -1,0 +1,114 @@
+commit fe77a26fe59a665bb2e1a86335337d9d4785eaa3
+Author: Konsta <kodu@live.fi>
+Date:   Tue Nov 9 22:54:23 2021 +0200
+
+    Poistettu tiedosto ja toisen nimi muutettu
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit abf135c7b11a9268b332419b67753dbe09334800
+Author: Konsta <kodu@live.fi>
+Date:   Tue Nov 9 22:50:28 2021 +0200
+
+    uusi kansio luotu
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 9691dc205c7369bfebc4103b0b1ac868e19acfab
+Author: Konsta <kodu@live.fi>
+Date:   Tue Nov 9 22:32:19 2021 +0200
+
+    tein muutoksia ensimmäiseen ja kolmanteen tiedostoon
+
+ eka.txt    | 2 +-
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 22a2390d2af5c41d6e89013d56f331071177b680
+Author: Konsta <kodu@live.fi>
+Date:   Tue Nov 9 19:40:52 2021 +0200
+
+    osa tekstistä korvattu
+
+ eka.txt | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 67c89271ed877a26090efe25d2a1106b4258dce3
+Author: Konsta <kodu@live.fi>
+Date:   Tue Nov 9 19:39:53 2021 +0200
+
+    tekstiä lisätty
+
+ eka.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit beefb0e28e8df20e888476ec025580ee4cd412b4
+Author: Konsta <kodu@live.fi>
+Date:   Tue Nov 9 19:38:12 2021 +0200
+
+    tiedosto.txt uudelleennimetty
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 95a65f6290c490c2a48b9c5a76c51a801b210ae6
+Author: Konsta <kodu@live.fi>
+Date:   Tue Nov 9 19:35:48 2021 +0200
+
+    toinen tiedosto poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 3401cee51b67d61aec73ba22c355a8860b7352be
+Author: Konsta <kodu@live.fi>
+Date:   Tue Nov 9 18:32:36 2021 +0200
+
+    stuff kansio luotu ja sen sisälle tiedosto
+
+ stuff/jokin.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a52e2f7389d10c62424c51dea5751f444f6d0ac6
+Author: Konsta <kodu@live.fi>
+Date:   Tue Nov 9 18:26:56 2021 +0200
+
+    toista ja kolmatta tiedostoa muokattu
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit c7ff434974dc0f97fb6b798407ebc0814d56a1bf
+Author: Konsta <kodu@live.fi>
+Date:   Tue Nov 9 18:25:13 2021 +0200
+
+    kolmas file luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f154295a8d392e2b950f206fd02509ce3f8a7dc4
+Author: Konsta <kodu@live.fi>
+Date:   Tue Nov 9 18:22:03 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 212b765eb866291d09c140dd4b0daf3787e1bf85
+Author: Konsta <kodu@live.fi>
+Date:   Tue Nov 9 18:16:07 2021 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
