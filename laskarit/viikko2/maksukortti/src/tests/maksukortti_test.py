@@ -1,27 +1,25 @@
-EDULLINEN = 2.5
-MAUKAS = 4
+import unittest
+from maksukortti import Maksukortti
+
+class TestMaksukortti(unittest.TestCase):
+    def setUp(self):
+        print("Set up goes here")
+
+    def test_hello_world(self):
+        self.assertEqual("Hello world", "Hello world")
 
 
-class Maksukortti:
-    def __init__(self, arvo_alussa):
-        self.arvo = arvo_alussa
+    def test_konstruktori_asettaa_saldon_oikein(self):
+        kortti = Maksukortti(10)
 
-    def syo_edullisesti(self):
-        if self.arvo >= EDULLINEN:
-            self.arvo -= EDULLINEN
+        vastaus = str(kortti)
 
-    def syo_maukkaasti(self):
-        if self.arvo >= MAUKAS:
-            self.arvo -= MAUKAS
+        self.assertEqual(vastaus, "Kortilla on rahaa 10 euroa")
 
-    def lataa_rahaa(self, rahamaara):
-        if rahamaara < 0:
-            return
 
-        self.arvo += rahamaara
+    def test_syo_edullisesti_vahentaa_saldoa_oikein(self):
+        kortti = Maksukortti(10)
 
-        if self.arvo > 150:
-            self.arvo = 150
+        kortti.syo_edullisesti()
 
-    def __str__(self):
-        return f"Kortilla on rahaa {self.arvo} euroa"
+        self.assertEqual(str(kortti), "Kortilla on rahaa 7.5 euroa")
