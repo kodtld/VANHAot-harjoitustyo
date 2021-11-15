@@ -20,7 +20,7 @@ Sovellus tarjoaa yhden käyttäjäroolin, joka on normaali käyttäjä. Normaali
 
 ### Ennen kirjautumista
 
-..* Käyttäjä voi luoda käyttäjätunnuksen tai kirjautua sisään.
+- Käyttäjä voi luoda käyttäjätunnuksen tai kirjautua sisään.
 
 ### Kirjautumisen jälkeen
 
