@@ -14,6 +14,7 @@ Pääsivulta pääsee napin lävitse joko lisäämään uuden kurssin, tai katse
 Sovellus tarjoaa yhden käyttäjäroolin, joka on normaali käyttäjä. Normaalit käyttäjät jakavat samat oikeudet keskenään. 
 
 ## Luonnos sovelluksen rakenteesta
+<img src="https://raw.githubusercontent.com/kodtld/ot-harjoitustyo/master/Luonnos%20OhTe%20Rakenne%20(1).png" width="750">
 
 ## Tarkempi toiminnallisuus
 
