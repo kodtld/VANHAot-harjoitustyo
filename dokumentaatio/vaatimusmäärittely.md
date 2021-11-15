@@ -26,6 +26,6 @@ Sovellus tarjoaa yhden käyttäjäroolin, joka on normaali käyttäjä. Normaali
 - Käyttäjä näkee viikkoaikataulunsa kotinäkymässä.
 - Käyttäjä näkee keskiarvonsa kotinäkymässä.
 - Käyttäjä voi siirtyä lisäämään uuden kurssin.
- - Uudelle kurssille annetaan mm. nimi, tunnus, laajuus, palautuspäivät, loppupäivämäärä.
+  - Uudelle kurssille annetaan mm. nimi, tunnus, laajuus, palautuspäivät, loppupäivämäärä.
 - Käyttäjä voi siirtyä tarkastelemaan aktiivisia ja suoritettuja kursseja.
- - Aktiivisten kurssien näkymästä voidaan lisätä suoritetuille kursseille saadut arvosanat.
+  - Aktiivisten kurssien näkymästä voidaan lisätä suoritetuille kursseille saadut arvosanat.
