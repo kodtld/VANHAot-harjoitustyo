@@ -1,10 +1,10 @@
 from tkinter import *
 import csv
 
+
 screen = Tk()
 screen.geometry("950x750")
 screen.title("Opintojen seuranta")
-
 
 User_name = Entry(screen, width="75")
 User_name.pack()
@@ -15,13 +15,13 @@ User_password.pack()
 User_password.insert(0,"Password")
 
 
+
 def Succes():
     viesti = Label(screen,text="Onnittelut tämä toimii").pack()
     
 
 def Fail():
-    viesti = Label(screen,text="Ei natsaa").pack()
-    
+    viesti = Label(screen,text="Wrong username or password").pack()
 
 def Login():
     usna = User_name.get()
@@ -35,20 +35,34 @@ def Login():
         else:
             Fail()
 
+
+def Register():
+    usna = User_name.get()
+    uspa = User_password.get()
+    Used_names=[]
+
+    with open("User_Data.csv","r") as ud:
+        reader = csv.reader(ud, delimiter=",")
+        for row in reader:
+            Used_names.append(row[0])
+
+    if usna in Used_names:
+        Fail()
+    else:
+        Succes()
+
+
+
+
+
 Button(text="Login",height="3",width="30",command=Login).pack()
 
 Label(text="").pack()
 
-Button(text="Register",height="3",width="30").pack()
+Button(text="Register",height="3",width="30",command=Register).pack()
     
     
-
-
-
-
 
 
 screen.mainloop()
     
-
-
