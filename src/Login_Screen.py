@@ -15,18 +15,16 @@ User_password.pack()
 User_password.insert(0,"Password")
 
 
-
-def Succes():
-    viesti = Label(screen,text="Onnittelut tämä toimii").pack()
-    
-
-def Fail():
-    viesti = Label(screen,text="Wrong username or password").pack()
-
 def Login():
     usna = User_name.get()
     uspa = User_password.get()
     
+    def Succes():
+        viesti = Label(screen,text="Onnittelut tämä toimii").pack()
+
+    def Fail():
+        viesti = Label(screen,text="Wrong username or password").pack()
+
     with open("User_Data.csv","r") as ud:
         reader = csv.reader(ud, delimiter=",")
         
@@ -46,11 +44,19 @@ def Register():
         for row in reader:
             Used_names.append(row[0])
 
+    # Inner functions
+    def Succes():
+        viesti = Label(screen,text="Onnittelut tämä toimii").pack()
+
+    def Fail():
+        viesti = Label(screen,text="Wrong username or password").pack()
+
+    # Check for duplicates
     if usna in Used_names:
         Fail()
+    
     else:
         Succes()
-
 
 
 
