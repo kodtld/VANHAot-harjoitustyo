@@ -5,9 +5,6 @@ import os
 dirname = os.path.dirname(__file__)
 data_file_path = os.path.join(dirname, 'User_Data.csv')
 
-print(dirname)
-print(data_file_path)
-
 screen = Tk()
 screen.geometry("950x750")
 screen.title("Opintojen seuranta")
