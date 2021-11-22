@@ -6,6 +6,8 @@ authors = ["Konsta <kodu@live.fi>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+invoke = "^1.6.0"
+cowsay = "^4.0"
 
 [tool.poetry.dev-dependencies]
 
