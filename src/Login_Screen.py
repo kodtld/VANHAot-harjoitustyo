@@ -1,5 +1,12 @@
 from tkinter import *
 import csv
+import os
+
+dirname = os.path.dirname(__file__)
+data_file_path = os.path.join(dirname, 'User_Data.csv')
+
+print(dirname)
+print(data_file_path)
 
 screen = Tk()
 screen.geometry("950x750")
@@ -23,7 +30,7 @@ def Login():
     def Fail():
         viesti = Label(screen,text="Wrong username or password").pack()
     
-    with open("User_Data.csv","r") as ud:
+    with open(data_file_path,"r") as ud:
         reader = csv.reader(ud, delimiter=",")    
         if [usna,uspa] in reader:
 
