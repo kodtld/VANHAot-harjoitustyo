@@ -45,7 +45,7 @@ def Register():
     uspa = User_password.get()
 
     Used_names=[]
-    with open("User_Data.csv","r") as ud:
+    with open(data_file_path,"r") as ud:
         reader = csv.reader(ud, delimiter=",")
         for row in reader:
             Used_names.append(row[0])
@@ -71,7 +71,7 @@ def Register():
         if " " in usna or "ä" in usna or "å" in usna or "ö" in usna:
             Character_check()
         else:    
-            with open("User_Data.csv","a") as ud:
+            with open(data_file_path,"a") as ud:
                 writer = csv.writer(ud,lineterminator='\n')
                 writer.writerow([usna,uspa])
                 ud.close()
