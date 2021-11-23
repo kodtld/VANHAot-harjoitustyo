@@ -14,4 +14,25 @@ Sovellus tarjoaa yhden käyttäjäroolin, joka on normaali käyttäjä. Normaali
 - [Vaatimusmäärittely](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
 - [Työaikakirjanpito](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/ty%C3%B6aikakirjanpito.md)
 
+## Asennus
+Asenna tarvittavat riippuvuudet komennolla: 
+```bash
+poetry install
+```
+## Suoritus
+Sovelluksen voi suorittaa komentoriviltä komennolla:
+```bash
+poetry run invoke start
+```
+## Testaus
+Testit voi ajaa komennolla:
+```bash
+poetry run invoke test
+```
+Tällä hetkellä suotuisia testejä ei vielä löydy, mutta testejä lisätään paraa'aikaa.
+
+Testikattavuusraportin voi puolestaan generoida komennolla:
+```bash
+poetry run invoke coverage-report
+```
 
