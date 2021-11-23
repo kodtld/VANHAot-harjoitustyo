@@ -24,7 +24,7 @@ Sovelluksen voi suorittaa komentoriviltä komennolla:
 ```bash
 poetry run invoke start
 ```
-Tai vaihtoehtoisesti komennolla:
+Tai mikäli invoke tuottaa ongelmia, voi ohjelman käynnistää "manuaalisesti" komennolla:
 ```bash
 python3 src/Login_Screen.py
 ```
