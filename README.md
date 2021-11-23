@@ -11,7 +11,7 @@ Pääsivulta pääsee napin lävitse joko lisäämään uuden kurssin, tai katse
 Sovellus tarjoaa yhden käyttäjäroolin, joka on normaali käyttäjä. Normaalit käyttäjät jakavat samat oikeudet keskenään. 
 
 ## Dokumentaatio
-[Vaatimusmäärittely](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
-[Työaikakirjanpito](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/ty%C3%B6aikakirjanpito.md)
+- [Vaatimusmäärittely](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
+- [Työaikakirjanpito](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/ty%C3%B6aikakirjanpito.md)
 
 
