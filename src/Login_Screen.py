@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: ISO-8859-1 -*-
 from tkinter import *
 import csv
 import os
@@ -22,7 +24,7 @@ def Login():
     uspa = User_password.get()
     
     def Succes():
-        viesti = Label(screen,text="Onnittelut tämä toimii").pack()
+        viesti = Label(screen,text="Onnittelut tama toimii").pack()
 
     def Fail():
         viesti = Label(screen,text="Wrong username or password").pack()
@@ -31,7 +33,7 @@ def Login():
         reader = csv.reader(ud, delimiter=",")    
         if [usna,uspa] in reader:
 
-            # Tarkoituksena on tulevaisuudessa kutsua funktiota joka avaa sovelluksen, Succes on väliaikainen täyte
+            # Tarkoituksena on tulevaisuudessa kutsua funktiota joka avaa sovelluksen, Succes on valiaikainen tayte
             Succes()
         else:
             Fail()
