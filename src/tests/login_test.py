@@ -1,13 +1,12 @@
 import unittest
 from Login_Screen import *
+from src.Login_Screen import Login, User_name, User_password
+
 
 class TestLogin(unittest.TestCase):
-    def setUp(self):
-        pass
 
     def test_register_username(self):
-        Usna = "testi"
-        Uspa = "testisalasana"
-        reader = ["kodtld","salasana"]
         Login()
         self.assertEqual(str(Login()), "Wrong username or password")
+
+
