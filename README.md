@@ -10,12 +10,12 @@ Pääsivulta pääsee napin lävitse joko lisäämään uuden kurssin, tai katse
 
 Sovellus tarjoaa yhden käyttäjäroolin, joka on normaali käyttäjä. Normaalit käyttäjät jakavat samat oikeudet keskenään. 
 
+## Ajankohtaista
+Sovelluksen ensimmäisen näkymän toiminta on toteutettu (visuaaliseen ilmeeseen tarkoitus palata ajan puutteissa). Käyttäjä pystyy tällä hetkellä luomaan tunnukset järjestelmään Register napin painalluksella. Login nappi antaa tällähetkellä vain viestin onnistumisen tai epäonnistumisen todentamiseksi. Login napin (funktion) toimintaa laajennetaan tämän viikon aikana niin, että se kutsuu seuraavan näkymän avaavaa funktiota, mikäli käyttäjätiedot löytyvät rekisteristä.
+
 ## Dokumentaatio
 - [Vaatimusmäärittely](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
 - [Työaikakirjanpito](https://github.com/kodtld/ot-harjoitustyo/blob/master/dokumentaatio/ty%C3%B6aikakirjanpito.md)
-
-## Ajankohtaista
-Sovelluksen ensimmäisen näkymän toiminta on toteutettu (visuaaliseen ilmeeseen tarkoitus palata ajan puutteissa). Käyttäjä pystyy tällä hetkellä luomaan tunnukset järjestelmään Register napin painalluksella. Login nappi antaa tällähetkellä vain viestin onnistumisen tai epäonnistumisen todentamiseksi. Login napin (funktion) toimintaa laajennetaan tämän viikon aikana niin, että se kutsuu seuraavan näkymän avaavaa funktiota, mikäli käyttäjätiedot löytyvät rekisteristä.
 
 ## Asennus
 Asenna tarvittavat riippuvuudet komennolla: 
