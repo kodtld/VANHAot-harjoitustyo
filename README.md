@@ -24,6 +24,11 @@ Sovelluksen voi suorittaa komentoriviltä komennolla:
 ```bash
 poetry run invoke start
 ```
+Tai vaihtoehtoisesti komennolla:
+```bash
+python3 src/Login_Screen.py
+```
+
 ## Testaus
 Testit voi ajaa komennolla:
 ```bash
