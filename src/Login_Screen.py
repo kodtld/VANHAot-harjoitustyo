@@ -1,42 +1,69 @@
 #!/usr/bin/python
 # -*- coding: ISO-8859-1 -*-
 
-
-from tkinter import * 
+import tkinter as tk
 import csv
 import os
 
 dirname = os.path.dirname(__file__)
 data_file_path = os.path.join(dirname, 'User_Data.csv')
 
-screen = Tk()
-screen.geometry("950x750")
-screen.title("Opintojen seuranta")
+root = tk.Tk()
+root.geometry("950x750")
+root.title("Opintojen seuranta")
 
-User_name = Entry(screen, width="75")
+frame1 = tk.Frame(root)
+frame2 = tk.Frame(root)
+frame3 = tk.Frame(root)
+frame4 = tk.Frame(root)
+
+def frm1to2():
+    frame1.pack_forget()
+    frame2.pack()
+
+def frm2to1():
+    frame2.pack_forget()
+    frame1.pack()
+
+def frm2to3():
+    frame2.pack_forget()
+    frame3.pack()
+
+def frm2to4():
+    frame2.pack_forget()
+    frame4.pack()
+
+def frm3to2():
+    frame3.pack_forget()
+    frame2.pack()
+
+def frm4to2():
+    frame4.pack_forget()
+    frame2.pack()
+
+# FRAME 1
+
+User_name = tk.Entry(frame1, width="75")
 User_name.pack()
 User_name.insert(0,"Username")
 
-User_password = Entry(screen,width="75")
+User_password = tk.Entry(frame1,width="75")
 User_password.pack()
 User_password.insert(0,"Password")
 
 def Login():
     usna = User_name.get()
     uspa = User_password.get()
-    
-    def Succes():
-        viesti = Label(screen,text="Onnittelut tama toimii").pack()
 
     def Fail():
-        viesti = Label(screen,text="Wrong username or password").pack()
+        viesti = tk.Label(frame1,text="Wrong username or password").pack()
     
     with open(data_file_path,"r") as ud:
         reader = csv.reader(ud, delimiter=",")    
         if [usna,uspa] in reader:
 
             # Tarkoituksena on tulevaisuudessa kutsua funktiota joka avaa sovelluksen, Succes on valiaikainen tayte
-            Succes()
+            frm1to2()
         else:
             Fail()
     ud.close()
@@ -54,16 +81,16 @@ def Register():
 
     # Inner functions
     def Succes():
-        viesti = Label(screen,text="Succes! You can now login with your credentials").pack()
+        viesti = tk.Label(frame1,text="Succes! You can now login with your credentials").pack()
 
     def Fail():
-        viesti = Label(screen,text="That username is already taken").pack()
+        viesti = tk.Label(frame1,text="That username is already taken").pack()
 
     def Character_check():
-        viesti = Label(screen,text="Username can't contain spaces, or the following characters: ä, å, ö").pack()
+        viesti = tk.Label(frame1,text="Username can't contain spaces, or the following characters: ä, å, ö").pack()
 
     def Correct_Lenght():
-        viesti = Label(screen,text="Username must be 4-15 characters long").pack()
+        viesti = tk.Label(frame1,text="Username must be 4-15 characters long").pack()
 
     if len(usna) < 4 or len(usna) > 15:
         Correct_Lenght()
@@ -81,11 +108,12 @@ def Register():
     else:
         Fail()
 
-Button(text="Login",height="3",width="30",command=Login).pack()
+tk.Button(frame1,text="Login",height="3",width="30",command=Login).pack()
 
-Label(text="").pack()
+tk.Label(frame1,text="").pack()
 
-Button(text="Register",height="3",width="30",command=Register).pack()
+tk.Button(frame1,text="Register",height="3",width="30",command=Register).pack()
 
-screen.mainloop()
+frame1.pack()
+root.mainloop()
     
