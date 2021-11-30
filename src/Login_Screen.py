@@ -8,112 +8,107 @@ import os
 dirname = os.path.dirname(__file__)
 data_file_path = os.path.join(dirname, 'User_Data.csv')
 
+
+
 root = tk.Tk()
 root.geometry("950x750")
 root.title("Opintojen seuranta")
 
-frame1 = tk.Frame(root)
-frame2 = tk.Frame(root)
-frame3 = tk.Frame(root)
-frame4 = tk.Frame(root)
 
-def frm1to2():
-    frame1.pack_forget()
-    frame2.pack()
+class Frame_Changer:
+    def __init__(self,master):
+        pass
 
-def frm2to1():
-    frame2.pack_forget()
-    frame1.pack()
+   
 
-def frm2to3():
-    frame2.pack_forget()
-    frame3.pack()
 
-def frm2to4():
-    frame2.pack_forget()
-    frame4.pack()
+class Login_Frame:
+    def __init__(self,master):
+        loginframe = tk.Frame(master)
+        
 
-def frm3to2():
-    frame3.pack_forget()
-    frame2.pack()
+        self.User_name = tk.Entry(master, width="75")
+        self.User_name.pack()
+        self.User_name.insert(0,"Username")
 
-def frm4to2():
-    frame4.pack_forget()
-    frame2.pack()
+        self.User_password = tk.Entry(master,width="75")
+        self.User_password.pack()
+        self.User_password.insert(0,"Password")
 
-# FRAME 1
+        def Login():
+            usna = self.User_name.get()
+            uspa = self.User_password.get()
 
-User_name = tk.Entry(frame1, width="75")
-User_name.pack()
-User_name.insert(0,"Username")
+            def Fail():
+                self.viesti = tk.Label(master,text="Wrong username or password").pack()
+            
+            with open(data_file_path,"r") as ud:
+                reader = csv.reader(ud, delimiter=",")    
+                if [usna,uspa] in reader:
 
-User_password = tk.Entry(frame1,width="75")
-User_password.pack()
-User_password.insert(0,"Password")
+                   pass
+                else:
+                    Fail()
+            ud.close()
 
-def Login():
-    usna = User_name.get()
-    uspa = User_password.get()
+        def Register():
+            usna = self.User_name.get()
+            uspa = self.User_password.get()
 
-    def Fail():
-        viesti = tk.Label(frame1,text="Wrong username or password").pack()
-    
-    with open(data_file_path,"r") as ud:
-        reader = csv.reader(ud, delimiter=",")    
-        if [usna,uspa] in reader:
+            Used_names=[]
+            with open(data_file_path,"r") as ud:
+                reader = csv.reader(ud, delimiter=",")
+                for row in reader:
+                    Used_names.append(row[0])
+            ud.close()
 
-            # Tarkoituksena on tulevaisuudessa kutsua funktiota joka avaa sovelluksen, Succes on valiaikainen tayte
-            frm1to2()
-        else:
-            Fail()
-    ud.close()
+            # Inner functions
+            def Succes():
+                self.viesti = tk.Label(master,text="Succes! You can now login with your credentials").pack()
 
-def Register():
-    usna = User_name.get()
-    uspa = User_password.get()
+            def Fail():
+                self.viesti = tk.Label(master,text="That username is already taken").pack()
 
-    Used_names=[]
-    with open(data_file_path,"r") as ud:
-        reader = csv.reader(ud, delimiter=",")
-        for row in reader:
-            Used_names.append(row[0])
-    ud.close()
+            def Character_check():
+                self.viesti = tk.Label(master,text="Username can't contain spaces, or the following characters: ä, å, ö").pack()
 
-    # Inner functions
-    def Succes():
-        viesti = tk.Label(frame1,text="Succes! You can now login with your credentials").pack()
+            def Correct_Lenght():
+                self.viesti = tk.Label(master,text="Username must be 4-15 characters long").pack()
 
-    def Fail():
-        viesti = tk.Label(frame1,text="That username is already taken").pack()
+            if len(usna) < 4 or len(usna) > 15:
+                Correct_Lenght()
 
-    def Character_check():
-        viesti = tk.Label(frame1,text="Username can't contain spaces, or the following characters: ä, å, ö").pack()
+            elif usna not in Used_names:
+                if " " in usna or "ä" in usna or "å" in usna or "ö" in usna:
+                    Character_check()
+                else:    
+                    with open(data_file_path,"a") as ud:
+                        writer = csv.writer(ud,lineterminator='\n')
+                        writer.writerow([usna,uspa])
+                        ud.close()
+                        Succes()
+            
+            else:
+                Fail()
 
-    def Correct_Lenght():
-        viesti = tk.Label(frame1,text="Username must be 4-15 characters long").pack()
+        self.logbtn = tk.Button(master,text="Login",height="3",width="30",command=Login).pack()
 
-    if len(usna) < 4 or len(usna) > 15:
-        Correct_Lenght()
+        self.tt = tk.Label(master,text="").pack()
 
-    elif usna not in Used_names:
-        if " " in usna or "ä" in usna or "å" in usna or "ö" in usna:
-            Character_check()
-        else:    
-            with open(data_file_path,"a") as ud:
-                writer = csv.writer(ud,lineterminator='\n')
-                writer.writerow([usna,uspa])
-                ud.close()
-                Succes()
-    
-    else:
-        Fail()
+        self.regbtn = tk.Button(master,text="Register",height="3",width="30",command=Register).pack()
 
-tk.Button(frame1,text="Login",height="3",width="30",command=Login).pack()
 
-tk.Label(frame1,text="").pack()
 
-tk.Button(frame1,text="Register",height="3",width="30",command=Register).pack()
+class Main_Frame():
+    def __init__(self,master):
+        mainframe = tk.Frame(master)
+        
 
-frame1.pack()
+
+
+
+s = Frame_Changer(root)
 root.mainloop()
     
+"""         tk.Button(self, text="Open page one",
+                  command=lambda: master.switch_frame(CourseScreen)).pack() """
